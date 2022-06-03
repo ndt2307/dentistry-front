@@ -1,14 +1,13 @@
+import { getUser } from '../../services/userService'
 import { useQuery } from 'react-query'
-import { IProp } from './type'
+import ErrorComponent from '../ErrorComponent'
+import ProgressSpinner from '../ProgressSpinner'
 
-const Example = (props: IProp): JSX.Element => {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('http://localhost:3001/api/user/thanhnd').then((res) => res.json()),
-  )
+const Example = (): JSX.Element => {
+  const { isLoading, error, data } = useQuery(['getUser', 'thanhnd'], () => getUser('unauthorised'))
 
-  if (isLoading) return <>Loading...</>
-
-  if (error) return <>An error has occurred: {JSON.stringify(error)}</>
+  if (isLoading) return <ProgressSpinner />
+  if (error) return <ErrorComponent error={error} />
 
   return (
     <div>

@@ -21,14 +21,50 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "camelcase": "error",
-    "spaced-comment": "error",
-    "quotes": ["error", "single"],
-    "no-duplicate-imports": "error"
+    "no-console": ["error"],
+    // "no-undef": "error",
+    "max-lines": ["error", 200],
+    "no-debugger": "error",
+    "complexity": ["error", 10],
+    "max-lines-per-function": ["error", 120],
+    "max-nested-callbacks": ["error", 3],
+    "max-params": ["error", 4],
+    "max-depth": ["error", 4],
+    "no-await-in-loop": "error",
+    "no-cond-assign": "error",
+    "no-irregular-whitespace": "error",
+    "no-loss-of-precision": "error",
+    "no-unsafe-negation": "error",
+    "no-alert": "error",
+    "no-confusing-arrow": "error",
+    "no-else-return": "error",
+    "no-empty": "error",
+    "no-eval": "error",
+    "no-extra-boolean-cast": "error",
+    "no-floating-decimal": "error",
+    "no-nested-ternary": "error",
+    "no-new": "error",
+    "no-plusplus": "error",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/require-default-props": "off",
+    "react/prop-types": "warn",
+    "react/jsx-props-no-spreading": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unused-expressions": ["error"],
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "after-used" }],
+    "@typescript-eslint/explicit-function-return-type": ["error"],
+    "@typescript-eslint/no-empty-function": 0
   },
   "settings": {
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  "ignorePatterns": ["cypress", "mock-api", "src/reportWebVitals.ts"]
 }

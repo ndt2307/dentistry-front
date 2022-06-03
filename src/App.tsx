@@ -1,11 +1,15 @@
 import './App.css'
-import Provider from './@dentistry/providers'
-import { useQuery } from 'react-query'
+import './styles/customize.css'
+import { Button } from 'antd'
 import Example from './@dentistry/components/Example'
+import Provider from './@dentistry/providers'
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <Provider>
+      <Button className='but' type='primary'>
+        Test
+      </Button>
       <Example />
     </Provider>
   )
